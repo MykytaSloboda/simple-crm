@@ -29,4 +29,6 @@ export async function updateTeam(
 
 export async function deleteTeam(id: SelectTeam["id"]) {
   await db.delete(teamTable).where(eq(teamTable.id, id));
+
+  return id;
 }

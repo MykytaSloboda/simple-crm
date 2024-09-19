@@ -24,8 +24,8 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const { name, phone_number, role_id, email } = body;
-    if (!name || !phone_number || !role_id || !email) {
+    const { name, phone_number, role, email } = body;
+    if (!name || !phone_number || !role || !email) {
       return new NextResponse(JSON.stringify({ message: 'Missing required fields' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
