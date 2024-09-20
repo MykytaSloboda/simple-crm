@@ -61,7 +61,7 @@ const columns: GridColDef[] = [
 
 export default function Team() {
   const { data: teams = [], error } = useSWR<Team[]>("/api/team", fetcher);
-  const [selectedRows, setSelectedRows] = useState<number[]>([]);
+  const [selectedRows, setSelectedRows] = useState<GridRowSelectionModel>([]);
 
   if (error) return <p>Error loading teams</p>;
   if (!teams) return <p>Loading...</p>;
